@@ -1,3 +1,9 @@
+### Wordpress template for UiBeta
+
+This is the modified JointsWP framework for UiBeta. More info on JointsWP and Foundation 5 below. 
+
+----
+
 Find out more here: www.jointswp.com  
 Demo: www.jointswp.com/demo
 
