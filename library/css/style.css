@@ -4527,7 +4527,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: 2.125rem; }
+  font-size: 1.875rem; }
 
 h2 {
   font-size: 1.6875rem; }
@@ -4693,7 +4693,7 @@ blockquote p {
     line-height: 1.4; }
 
   h1 {
-    font-size: 2.75rem; }
+    font-size: 2.5rem; }
 
   h2 {
     font-size: 2.3125rem; }
@@ -5890,12 +5890,12 @@ body {
   vertical-align: text-top;
   border-radius: 3px; }
 
-.label a {
+.label a, .updated {
   color: white;
   font-weight: 700; }
-  .label a:visited {
+  .label a:visited, .updated:visited {
     color: white; }
-  .label a:hover {
+  .label a:hover, .updated:hover {
     text-decoration: underline; }
 
 /********************
@@ -5993,9 +5993,9 @@ HEADER STYLES
 
 #logo {
   margin: 0;
-  line-height: 2.75rem;
+  line-height: 2.5rem;
   text-align: center;
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: bold;
   transition: all 500ms ease-in-out; }
   #logo a .char1, #logo a .char2, #logo a .char4, #logo a .char5, #logo a .char6 {
@@ -6302,8 +6302,8 @@ MEDIUM
   
   ******************************************************************/
   #logo {
-    font-size: 4.75rem;
-    line-height: 7.75rem; }
+    font-size: 4.5rem;
+    line-height: 7.5rem; }
 
   /*********************
   NAVIGATION STYLES
@@ -6375,7 +6375,7 @@ you can add resource intensive styles.
   HEADER STYLES
   *********************/
   #logo {
-    font-size: 7.75rem; }
+    font-size: 7.5rem; }
 
   /*********************
   NAVIGATION STYLES

@@ -19,7 +19,7 @@ body {
 	vertical-align: text-top;
 	border-radius: $global-radius;
 }
-.label a {
+.label a, .updated {
 	color: $label-font-color;
 	font-weight: 700;
 
