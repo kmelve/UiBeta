@@ -110,10 +110,10 @@ function joints_footer_links() {
     	'menu' => __( 'Footer Links', 'jointstheme' ),   // nav name
     	'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
     	'theme_location' => 'footer-links',             // where it's located in the theme
-    	'before' => '',                                 // before the menu
-        'after' => '',                                  // after the menu
-        'link_before' => '',                            // before each link
-        'link_after' => '',                             // after each link
+    	'before' => '<ul class="inline-list'>,                                 // before the menu
+        'after' => '</ul>',                                  // after the menu
+        'link_before' => '<li><label>',                            // before each link
+        'link_after' => '</label></li>',                             // after each link
         'depth' => 0,                                   // limit the depth of the nav
     	'fallback_cb' => 'joints_footer_links_fallback'  // fallback function
 	));
@@ -162,11 +162,11 @@ function joints_register_sidebars() {
 	sidebar's id is, for example:
 	*/
 	register_sidebar(array(
-		'id' => 'sidebar-left',
-		'name' => __('Sidebar Left', 'jointstheme'),
-		'description' => __('The left sidebar.', 'jointstheme'),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
+		'id' => 'sidebar-footer',
+		'name' => __('Sidebar Footer', 'jointstheme'),
+		'description' => __('The footer sidebar.', 'jointstheme'),
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget' => '</li>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
