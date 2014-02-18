@@ -110,7 +110,7 @@ function joints_footer_links() {
     	'menu' => __( 'Footer Links', 'jointstheme' ),   // nav name
     	'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
     	'theme_location' => 'footer-links',             // where it's located in the theme
-    	'before' => '<ul class="inline-list'>,                                 // before the menu
+    	'before' => '<ul class="inline-list'>',                                 // before the menu
         'after' => '</ul>',                                  // after the menu
         'link_before' => '<li><label>',                            // before each link
         'link_after' => '</label></li>',                             // after each link
