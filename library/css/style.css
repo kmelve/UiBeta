@@ -6040,6 +6040,9 @@ POSTS & CONTENT STYLES
   #content article {
     margin-top: 2.2em; }
 
+.hentry header {
+  margin-bottom: 1em; }
+
 /* end .hentry */
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -6052,7 +6055,8 @@ POSTS & CONTENT STYLES
 /* style by tag (i.e. tag-news) */
 /* post meta */
 .byline {
-  color: #999; }
+  color: #999;
+  margin-bottom: 1em; }
 
 /* entry content */
 .entry-content {

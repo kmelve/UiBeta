@@ -255,7 +255,9 @@ POSTS & CONTENT STYLES
 
 		.hentry {
 
-			header {}
+			header {
+				margin-bottom: 1em;
+			}
 
 			footer {}
 
@@ -283,6 +285,7 @@ POSTS & CONTENT STYLES
 		/* post meta */
 		.byline {
 			color: #999;
+			margin-bottom: 1em;
 
 			time {}
 		}
