@@ -7,7 +7,9 @@
     </header> <!-- end article header -->
 					
     <section class="entry-content clearfix" itemprop="articleBody">
-		<?php the_post_thumbnail('full'); ?>
+		<ul class="clearing-thumbs" data-clearing>
+			<li><?php the_post_thumbnail('full'); ?></li>
+			</ul>
 		<?php the_content(); ?>
 	</section> <!-- end article section -->
 						
