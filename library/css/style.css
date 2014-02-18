@@ -6267,11 +6267,9 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.widget ul {
-  margin: 0; }
-  .widget ul li {
-    list-style: none;
-    /* deep nesting */ }
+.widget ul li {
+  list-style: none;
+  /* deep nesting */ }
 
 /*********************
 FOOTER STYLES

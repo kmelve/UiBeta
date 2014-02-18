@@ -4,7 +4,7 @@
 			
 				<div id="inner-content" class="row clearfix">
 			
-				    <div id="main" class="large-7 medium-7 columns clearfix" role="main">
+				    <div id="main" class="large-8 medium-8 columns clearfix" role="main">
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

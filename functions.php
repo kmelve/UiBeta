@@ -108,12 +108,12 @@ function joints_footer_links() {
     	'container' => '',                              // remove nav container
     	'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
     	'menu' => __( 'Footer Links', 'jointstheme' ),   // nav name
-    	'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
+    	'menu_class' => 'nav footer-nav inline-list clearfix',      // adding custom nav class
     	'theme_location' => 'footer-links',             // where it's located in the theme
-    	'before' => '<ul class="inline-list">',                                 // before the menu
-        'after' => '</ul>',                                  // after the menu
-        'link_before' => '<li><label>',                            // before each link
-        'link_after' => '</label></li>',                             // after each link
+    	'before' => '',                                 // before the menu
+        'after' => '',                                  // after the menu
+        'link_before' => '',                            // before each link
+        'link_after' => '',                             // after each link
         'depth' => 0,                                   // limit the depth of the nav
     	'fallback_cb' => 'joints_footer_links_fallback'  // fallback function
 	));
