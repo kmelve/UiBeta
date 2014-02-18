@@ -164,9 +164,9 @@ function joints_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar-footer',
 		'name' => __('Sidebar Footer', 'jointstheme'),
-		'description' => __('The footer sidebar.', 'jointstheme'),
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
+		'description' => __('The footer sidebar. Set to our widgets (for now).', 'jointstheme'),
+		'before_widget' => '<div id="%1$s" class="widget large-3 medium-3 columns" data-equalizer-watch>',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));

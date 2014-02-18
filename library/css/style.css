@@ -5897,6 +5897,9 @@ body {
     color: white; }
   .label a:hover, .updated:hover {
     text-decoration: underline; }
+  .label a img#wpstats, .updated img#wpstats {
+    /* Makes the silly smiley face (used for statistics) go away */
+    display: none; }
 
 /********************
 WORDPRESS BODY CLASSES

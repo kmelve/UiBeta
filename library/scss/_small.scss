@@ -30,6 +30,9 @@ body {
 		text-decoration: underline;
 
 	}
+	img#wpstats {	/* Makes the silly smiley face (used for statistics) go away */
+		display: none;
+	}
 }
 /********************
 WORDPRESS BODY CLASSES
