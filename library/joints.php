@@ -351,9 +351,9 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 // Search Form
 function joints_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	<label class="screen-reader-text" for="s">' . __('Search for:', 'jointstheme') . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Search the Site...','jointstheme').'" />
-	<input type="submit" id="searchsubmit" class="button" value="'. esc_attr__('Search') .'" />
+	<label class="screen-reader-text" for="s">' . __('Søk etter:', 'jointstheme') . '</label>
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Søk og du skal finne...','jointstheme').'" />
+	<input type="submit" id="searchsubmit" class="button radius" value="'. esc_attr__('Søk') .'" />
 	</form>';
 	return $form;
 } // don't remove this bracket!
@@ -371,7 +371,7 @@ function joints_filter_ptags_on_images($content){
 function joints_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'jointstheme') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'jointstheme') .'</a>';
+return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Les', 'jointstheme') . get_the_title($post->ID).'">'. __('Les meir &raquo;', 'jointstheme') .'</a>';
 }
 
 /*
@@ -386,7 +386,7 @@ function joints_get_the_author_posts_link() {
 	$link = sprintf(
 		'<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
 		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
-		esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ), // No further l10n needed, core will take care of this one
+		esc_attr( sprintf( __( 'Skriverier av %s' ), get_the_author() ) ), // No further l10n needed, core will take care of this one
 		get_the_author()
 	);
 	return $link;

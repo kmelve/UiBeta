@@ -51,6 +51,7 @@
 							<span id="logo"><a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></span>
 
 						</div>
+						
 						<?php get_template_part( 'partials/nav', 'offcanvas' ); ?>
 						
 						
