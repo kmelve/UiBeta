@@ -57,9 +57,17 @@ SIDEBARS & ASIDES
 		margin: 2.2em 0;
 		
 		h4.widgettitle, a, a:visited {
-			font-size: rem-calc(14);
+			font-size: rem-calc(16);
 		}
 		}
+	.widget_text {
+		
+		font-size:  rem-calc(13);
+		
+		p {
+		font-size:  rem-calc(13);
+		}
+	}
 
 /*********************
 FOOTER STYLES

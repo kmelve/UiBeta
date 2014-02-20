@@ -6343,7 +6343,12 @@ MEDIUM
     padding: 0 10px;
     margin: 2.2em 0; }
     .widget h4.widgettitle, .widget a, .widget a:visited {
-      font-size: 0.875rem; }
+      font-size: 1rem; }
+
+  .widget_text {
+    font-size: 0.8125rem; }
+    .widget_text p {
+      font-size: 0.8125rem; }
 
   /*********************
   FOOTER STYLES
