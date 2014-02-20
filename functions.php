@@ -199,6 +199,21 @@ function joints_register_sidebars() {
 } // don't remove this bracket!
 
 /*********************
+OpenGraph JetPack
+*********************/
+function fb_home_image( $tags ) {
+    if ( is_home() ) {
+        // Remove the default blank image added by Jetpack
+        unset( $tags['og:image'] );
+ 
+        $fb_home_img = 'http://beta.uib.no/wp-content/themes/uibeta/library/images/opengraph.png';
+        $tags['og:image'] = esc_url( $fb_home_img );
+    }
+    return $tags;
+}
+add_filter( 'jetpack_open_graph_tags', 'fb_home_image' );
+
+/*********************
 COMMENT LAYOUT
 *********************/
 
