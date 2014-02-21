@@ -140,37 +140,9 @@ function joints_footer_links_fallback() {
 /*********************
 SIDEBARS
 *********************/
-
-// Sidebars & Widgetizes Areas
 function joints_register_sidebars() {
-	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __('Sidebar 1', 'jointstheme'),
-		'description' => __('The first (primary) sidebar.', 'jointstheme'),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
-
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
-
-	Just change the name to whatever your new
-	sidebar's id is, for example:
-	*/
-	register_sidebar(array(
-		'id' => 'sidebar-footer',
-		'name' => __('Sidebar Footer', 'jointstheme'),
-		'description' => __('The footer sidebar. Set to our widgets (for now).', 'jointstheme'),
-		'before_widget' => '<div id="%1$s" class="widget large-3 medium-3 columns" data-equalizer-watch>',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
-	register_sidebar(array(
+// Sidebars & Widgetizes Areas
+register_sidebar(array(
 		'id' => 'sidebar-right',
 		'name' => __('Sidebar Right', 'jointstheme'),
 		'description' => __('The right sidebar.', 'jointstheme'),
@@ -188,6 +160,17 @@ function joints_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
+
+	register_sidebar(array(
+		'id' => 'sidebar-footer',
+		'name' => __('Sidebar Footer', 'jointstheme'),
+		'description' => __('The footer sidebar. Set to our widgets (for now).', 'jointstheme'),
+		'before_widget' => '<div id="%1$s" class="widget large-3 medium-3 columns" data-equalizer-watch>',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	
 
 /*
 	To call the sidebar in your template, you can just copy
