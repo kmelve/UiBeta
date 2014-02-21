@@ -162,7 +162,8 @@ HEADER STYLES
 *********************/
 
 .header {
-	margin-bottom: 20px;
+	//background-image:  url('../images/headerbackground.png');
+
 		#inner-header {
 			li {
 				list-style: none;
@@ -178,7 +179,7 @@ HEADER STYLES
 		}
 }
 
-	#logo {
+#logo {
     margin: 0;
     line-height: $h1-font-size;
     text-align: center;

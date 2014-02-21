@@ -5985,14 +5985,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
-.header {
-  margin-bottom: 20px; }
-  .header #inner-header li {
-    list-style: none; }
-  .header #inner-header .off-canvas-list ul {
-    margin-left: 0; }
-    .header #inner-header .off-canvas-list ul .dropdown {
-      margin-left: 20px; }
+.header #inner-header li {
+  list-style: none; }
+.header #inner-header .off-canvas-list ul {
+  margin-left: 0; }
+  .header #inner-header .off-canvas-list ul .dropdown {
+    margin-left: 20px; }
 
 #logo {
   margin: 0;
@@ -6384,7 +6382,7 @@ you can add resource intensive styles.
   /*********************
   HEADER STYLES
   *********************/
-  #logo {
+  .header #logo {
     font-size: 7.5rem; }
 
   /*********************
@@ -6438,7 +6436,11 @@ XLARGE
   Styles apply to 90.063em and up.
   
   
-  ******************************************************************/ }
+  ******************************************************************/
+  .header {
+    background-image: url("../images/headerbackground.png");
+    background-repeat: no-repeat;
+    background-size: contain; } }
 /*
 XXLARGE
 */
