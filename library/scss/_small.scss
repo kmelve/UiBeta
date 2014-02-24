@@ -700,10 +700,15 @@ SIDEBARS & ASIDES
 	#searchsubmit {
 	}
 
-	.widgettitle {}
+	.widgettitle {
+		color: #000; 
+  		text-align: center;
+  		border-bottom: 1px solid rgba(0,0,0,0.5);
+	}
 
 	.widget {
-
+		background: rgba(255,255,255,0.5);
+		border-radius: 3px;
 		ul {
 			
 
@@ -731,7 +736,10 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	margin-top: 1em;
+	background-image:  url(../images/footerbackground.jpg);
+	background-repeat: no-repeat;
+	background-position:  left bottom;
+	background-size: cover;
 }
 
 	/*

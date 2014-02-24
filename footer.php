@@ -4,7 +4,7 @@
 				
 					<div class="large-12 medium-12 columns">
 						<nav role="navigation">
-    						Nyttige lenker: <?php joints_footer_links(); ?>
+    						 <?php joints_footer_links(); ?>
     						</nav>
     					</div>
 	               		</div>
