@@ -209,21 +209,22 @@ function joints_comments($comment, $args, $depth) {
 				<?php
 				/*
 					this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
-					echo get_avatar($comment,$size='32',$default='<path_to_url>' );
 				*/
+					echo get_avatar($comment,$size='64' );
+				
 				?>
 				<!-- custom gravatar call -->
 				<?php
 					// create variable
 					$bgauthemail = get_comment_author_email();
 				?>
-				<?php printf(__('<cite class="fn">%s</cite>', 'jointstheme'), get_comment_author_link()) ?> on
+				<?php printf(__('<cite class="fn">%s</cite>', 'jointstheme'), get_comment_author_link()) ?> – 
 				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__(' F jS, Y - g:ia', 'jointstheme')); ?> </a></time>
-				<?php edit_comment_link(__('(Edit)', 'jointstheme'),'  ','') ?>
+				<?php edit_comment_link(__('(Endre)', 'jointstheme'),'  ','') ?>
 			</header>
 			<?php if ($comment->comment_approved == '0') : ?>
 				<div class="alert alert-info">
-					<p><?php _e('Your comment is awaiting moderation.', 'jointstheme') ?></p>
+					<p><?php _e('Kommentaren din venter på godkjenning.', 'jointstheme') ?></p>
 				</div>
 			<?php endif; ?>
 			<section class="comment_content clearfix">

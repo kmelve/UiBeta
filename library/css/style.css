@@ -6154,9 +6154,9 @@ COMMENT STYLES
     margin-left: 10px;
     margin-top: 0;
     padding-bottom: 0;
-    background: #d95900; }
+    background: #F3F3F3; }
   .commentlist li.depth-3 {
-    background: #c04f00; }
+    background: #e6e6e6; }
   .commentlist .vcard {
     margin-left: 50px; }
     .commentlist .vcard cite.fn {
@@ -6174,7 +6174,8 @@ COMMENT STYLES
       left: 10px;
       padding: 2px;
       border: 1px solid #cecece;
-      background: #fff; }
+      background: #fff;
+      border-radius: 3px; }
   .commentlist .comment_content p {
     margin: 0.7335em 0 1.5em;
     font-size: 1em;

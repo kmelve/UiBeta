@@ -496,12 +496,12 @@ COMMENT STYLES
 		margin-left: 10px;
 		margin-top: 0;
 		padding-bottom: 0;
-		background: $secondary-color;
+		background: #F3F3F3;
 	}
 
 	li.depth-2 {}
 	li.depth-3 {
-		background: darken($secondary-color, 5%);
+		background: darken(#F3F3F3, 5%);
 	}
 	li.depth-4 {}
 	li.depth-5 {}
@@ -558,6 +558,7 @@ COMMENT STYLES
 			padding: 2px;
 			border: 1px solid #cecece;
 			background: #fff;
+			border-radius:  3px;
 		}
 
 	} /* end .commentlist .vcard */
