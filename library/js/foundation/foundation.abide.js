@@ -4,17 +4,15 @@
   Foundation.libs.abide = {
     name : 'abide',
 
-    version : '5.1.1',
+    version : '5.0.0',
 
     settings : {
-      live_validate : true,
       focus_on_invalid : true,
-      error_labels: true, // labels with a for="inputId" will recieve an `error` class
       timeout : 1000,
       patterns : {
-        alpha: /^[a-zA-Z]+$/,
-        alpha_numeric : /^[a-zA-Z0-9]+$/,
-        integer: /^\d+$/,
+        alpha: /[a-zA-Z]+/,
+        alpha_numeric : /[a-zA-Z0-9]+/,
+        integer: /-?\d+/,
         number: /-?(?:\d+|\d{1,3}(?:,\d{3})+)?(?:\.\d+)?/,
 
         // generic password: upper-case, lower-case, number/special character, and min 8 characters
@@ -53,19 +51,14 @@
 
     events : function (scope) {
       var self = this,
-          form = self.S(scope).attr('novalidate', 'novalidate'),
-          settings = form.data(this.attr_name(true) + '-init');
-
-      this.invalid_attr = this.add_namespace('data-invalid');
+          form = $(scope).attr('novalidate', 'novalidate'),
+          settings = form.data('abide-init');
 
       form
         .off('.abide')
         .on('submit.fndtn.abide validate.fndtn.abide', function (e) {
-          var is_ajax = /ajax/i.test(self.S(this).attr(self.attr_name()));
-          return self.validate(self.S(this).find('input, textarea, select').get(), e, is_ajax);
-        })
-        .on('reset', function() {
-          return self.reset($(this));
+          var is_ajax = /ajax/i.test($(this).attr('data-abide'));
+          return self.validate($(this).find('input, textarea, select').get(), e, is_ajax);
         })
         .find('input, textarea, select')
           .off('.abide')
@@ -74,33 +67,24 @@
           })
           .on('keydown.fndtn.abide', function (e) {
             var settings = $(this).closest('form').data('abide-init');
-            if (settings.live_validate === true) {
-              clearTimeout(self.timer);
-              self.timer = setTimeout(function () {
-                self.validate([this], e);
-              }.bind(this), settings.timeout);
-            }
+            clearTimeout(self.timer);
+            self.timer = setTimeout(function () {
+              self.validate([this], e);
+            }.bind(this), settings.timeout);
           });
-    },
-
-    reset : function (form) {
-      form.removeAttr(this.invalid_attr);
-      $(this.invalid_attr, form).removeAttr(this.invalid_attr);
-      $('.error', form).not('small').removeClass('error');
     },
 
     validate : function (els, e, is_ajax) {
       var validations = this.parse_patterns(els),
           validation_count = validations.length,
-          form = this.S(els[0]).closest('form'),
+          form = $(els[0]).closest('form'),
           submit_event = /submit/.test(e.type);
 
-      // Has to count up to make sure the focus gets applied to the top error
       for (var i=0; i < validation_count; i++) {
         if (!validations[i] && (submit_event || is_ajax)) {
           if (this.settings.focus_on_invalid) els[i].focus();
           form.trigger('invalid');
-          this.S(els[i]).closest('form').attr(this.invalid_attr, '');
+          $(els[i]).closest('form').attr('data-invalid', '');
           return false;
         }
       }
@@ -109,7 +93,7 @@
         form.trigger('valid');
       }
 
-      form.removeAttr(this.invalid_attr);
+      form.removeAttr('data-invalid');
 
       if (is_ajax) return false;
 
@@ -117,10 +101,10 @@
     },
 
     parse_patterns : function (els) {
-      var i = els.length,
+      var count = els.length,
           el_patterns = [];
 
-      while (i--) {
+      for (var i = count - 1; i >= 0; i--) {
         el_patterns.push(this.pattern(els[i]));
       }
 
@@ -131,16 +115,16 @@
       var type = el.getAttribute('type'),
           required = typeof el.getAttribute('required') === 'string';
 
+      if (this.settings.patterns.hasOwnProperty(type)) {
+        return [el, this.settings.patterns[type], required];
+      }
+
       var pattern = el.getAttribute('pattern') || '';
 
       if (this.settings.patterns.hasOwnProperty(pattern) && pattern.length > 0) {
         return [el, this.settings.patterns[pattern], required];
       } else if (pattern.length > 0) {
         return [el, new RegExp(pattern), required];
-      }
-      
-      if (this.settings.patterns.hasOwnProperty(type)) {
-        return [el, this.settings.patterns[type], required];
       }
 
       pattern = /.*/;
@@ -149,69 +133,34 @@
     },
 
     check_validation_and_apply_styles : function (el_patterns) {
-      var i = el_patterns.length,
+      var count = el_patterns.length,
           validations = [];
 
-      while (i--) {
+      for (var i = count - 1; i >= 0; i--) {
         var el = el_patterns[i][0],
             required = el_patterns[i][2],
             value = el.value,
-            direct_parent = this.S(el).parent(),
-            is_equal = el.getAttribute(this.add_namespace('data-equalto')),
+            is_equal = el.getAttribute('data-equalto'),
             is_radio = el.type === "radio",
-            is_checkbox = el.type === "checkbox",
-            label = this.S('label[for="' + el.getAttribute('id') + '"]'),
             valid_length = (required) ? (el.value.length > 0) : true;
-
-        var parent;
-
-        if (!direct_parent.is('label')) {
-          parent = direct_parent;
-        } else {
-          parent = direct_parent.parent();
-        }
 
         if (is_radio && required) {
           validations.push(this.valid_radio(el, required));
-        } else if (is_checkbox && required) {
-          validations.push(this.valid_checkbox(el, required));
         } else if (is_equal && required) {
-          validations.push(this.valid_equal(el, required, parent));
+          validations.push(this.valid_equal(el, required));
         } else {
-
           if (el_patterns[i][1].test(value) && valid_length ||
             !required && el.value.length < 1) {
-            this.S(el).removeAttr(this.invalid_attr);
-            parent.removeClass('error');
-            if (label.length > 0 && this.settings.error_labels) label.removeClass('error');
-
+            $(el).removeAttr('data-invalid').parent().removeClass('error');
             validations.push(true);
-            $(el).triggerHandler('valid');
           } else {
-            this.S(el).attr(this.invalid_attr, '');
-            parent.addClass('error');
-            if (label.length > 0 && this.settings.error_labels) label.addClass('error');
-
+            $(el).attr('data-invalid', '').parent().addClass('error');
             validations.push(false);
-            $(el).triggerHandler('invalid');
           }
         }
       }
 
       return validations;
-    },
-
-    valid_checkbox : function(el, required) {
-      var el = this.S(el),
-          valid = (el.is(':checked') || !required);
-
-      if (valid) {
-        el.removeAttr(this.invalid_attr).parent().removeClass('error');
-      } else {
-        el.attr(this.invalid_attr, '').parent().addClass('error');
-      }
-
-      return valid;
     },
 
     valid_radio : function (el, required) {
@@ -220,34 +169,30 @@
           count = group.length,
           valid = false;
 
-      // Has to count up to make sure the focus gets applied to the top error
       for (var i=0; i < count; i++) {
         if (group[i].checked) valid = true;
       }
 
-      // Has to count up to make sure the focus gets applied to the top error
       for (var i=0; i < count; i++) {
         if (valid) {
-          this.S(group[i]).removeAttr(this.invalid_attr).parent().removeClass('error');
+          $(group[i]).removeAttr('data-invalid').parent().removeClass('error');
         } else {
-          this.S(group[i]).attr(this.invalid_attr, '').parent().addClass('error');
+          $(group[i]).attr('data-invalid', '').parent().addClass('error');
         }
       }
 
       return valid;
     },
 
-    valid_equal: function(el, required, parent) {
-      var from  = document.getElementById(el.getAttribute(this.add_namespace('data-equalto'))).value,
+    valid_equal: function(el, required) {
+      var from  = document.getElementById(el.getAttribute('data-equalto')).value,
           to    = el.value,
           valid = (from === to);
 
       if (valid) {
-        this.S(el).removeAttr(this.invalid_attr);
-        parent.removeClass('error');
+        $(el).removeAttr('data-invalid').parent().removeClass('error');
       } else {
-        this.S(el).attr(this.invalid_attr, '');
-        parent.addClass('error');
+        $(el).attr('data-invalid', '').parent().addClass('error');
       }
 
       return valid;

@@ -126,7 +126,7 @@ function joints_scripts_and_styles() {
     
     // adding Foundation scripts file in the footer
     wp_register_script( 'foundation-js', get_template_directory_uri() . '/library/js/foundation.min.js', array( 'jquery' ), '', true );
-
+ 
     // adding typekit to the header
     wp_register_script( 'typekit', '//use.typekit.net/nfo6uyf.js', array(), false );
 
@@ -137,7 +137,7 @@ function joints_scripts_and_styles() {
     wp_register_script( 'bigfoot', get_stylesheet_directory_uri() . '/library/js/vendor/bigfoot.min.js', array( 'jquery' ), '', true );
    
    // adding the bigfoot style
-   	wp_register_style( 'bigfoot', get_stylesheet_directory_uri() . '/library/css/bigfoot-default.css', array(), '', all );
+   wp_register_style( 'bigfoot', get_stylesheet_directory_uri() . '/library/css/bigfoot-default.css', array(), '', all );
 
    // register main stylesheet
     wp_register_style( 'joints-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );

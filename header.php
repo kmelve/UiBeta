@@ -8,7 +8,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title><?php bloginfo('name'); ?><?php wp_title('|', true, 'right'); ?></title>
+		<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 
 		<!-- Google Chrome Frame for IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

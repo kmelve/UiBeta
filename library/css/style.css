@@ -4530,10 +4530,10 @@ h1 {
   font-size: 1.875rem; }
 
 h2 {
-  font-size: 1.6875rem; }
+  font-size: 1.25rem; }
 
 h3 {
-  font-size: 1.375rem; }
+  font-size: 0.9375rem; }
 
 h4 {
   font-size: 1.125rem; }
@@ -4696,10 +4696,10 @@ blockquote p {
     font-size: 2.5rem; }
 
   h2 {
-    font-size: 2.3125rem; }
+    font-size: 1.875rem; }
 
   h3 {
-    font-size: 1.6875rem; }
+    font-size: 1.25rem; }
 
   h4 {
     font-size: 1.4375rem; } }
@@ -5985,12 +5985,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
-.header #inner-header li {
-  list-style: none; }
-.header #inner-header .off-canvas-list ul {
-  margin-left: 0; }
-  .header #inner-header .off-canvas-list ul .dropdown {
-    margin-left: 20px; }
+.header {
+  padding-bottom: 1em; }
+  .header #inner-header li {
+    list-style: none; }
+  .header #inner-header .off-canvas-list ul {
+    margin-left: 0; }
+    .header #inner-header .off-canvas-list ul .dropdown {
+      margin-left: 20px; }
 
 #logo {
   margin: 0;
@@ -6292,7 +6294,8 @@ FOOTER STYLES
   background-image: url(../images/footerbackground.jpg);
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover; }
+  background-size: cover;
+  padding-top: 1em; }
 
 /*
 if you checked out the link above:
