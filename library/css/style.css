@@ -4530,10 +4530,10 @@ h1 {
   font-size: 1.875rem; }
 
 h2 {
-  font-size: 1.25rem; }
+  font-size: 0.625rem; }
 
 h3 {
-  font-size: 0.9375rem; }
+  font-size: 0.6875rem; }
 
 h4 {
   font-size: 1.125rem; }
@@ -4696,10 +4696,10 @@ blockquote p {
     font-size: 2.5rem; }
 
   h2 {
-    font-size: 1.875rem; }
+    font-size: 1.25rem; }
 
   h3 {
-    font-size: 1.25rem; }
+    font-size: 1rem; }
 
   h4 {
     font-size: 1.4375rem; } }
