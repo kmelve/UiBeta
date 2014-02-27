@@ -6308,6 +6308,10 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+.thanks {
+  text-align: center;
+  font-style: italic; }
+
 /*
 MEDIUM
 */
