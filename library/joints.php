@@ -45,7 +45,7 @@ function joints_start() {
     // cleaning up random code around images
     add_filter('the_content', 'joints_filter_ptags_on_images');
     // cleaning up excerpt
-    add_filter('excerpt_more', 'joints_excerpt_more');
+    add_filter('the_excerpt', 'joints_excerpt_more');
 
 } /* end joints start */
 
@@ -127,7 +127,7 @@ function joints_scripts_and_styles() {
     // adding Foundation scripts file in the footer
     wp_register_script( 'foundation-js', get_template_directory_uri() . '/library/js/foundation.min.js', array( 'jquery' ), '', true );
  
-    // adding typekit to the header
+        // adding typekit to the header
     wp_register_script( 'typekit', '//use.typekit.net/nfo6uyf.js', array(), false );
 
     // adding spanner.js to the mix
@@ -154,11 +154,11 @@ function joints_scripts_and_styles() {
     wp_register_script( 'joints-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
+    wp_enqueue_script( 'joints-modernizr' );
+    wp_enqueue_script ('foundation-js');
     wp_enqueue_script( 'typekit' );
     wp_enqueue_script( 'bigfoot' );
     wp_enqueue_script( 'spanner' );
-    wp_enqueue_script( 'joints-modernizr' );
-    wp_enqueue_script ('foundation-js');
     wp_enqueue_style( 'joints-stylesheet' );
     wp_enqueue_style( 'foundation-icons' );
     wp_enqueue_style( 'bigfoot' );
@@ -371,7 +371,7 @@ function joints_filter_ptags_on_images($content){
 function joints_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Les', 'jointstheme') . get_the_title($post->ID).'">'. __('Les meir &raquo;', 'jointstheme') .'</a>';
+	return $more . '<p><a class="excerpt-read-more button radius clearfix" href="'. get_permalink($post->ID) . '" title="'. __('Les', 'jointstheme') . get_the_title($post->ID).'">'. __('Les meir &raquo;', 'jointstheme') .'</a></p>';
 }
 
 /*

@@ -16,7 +16,7 @@
 	</section> <!-- end article section -->
 						
 	<footer class="article-footer">
-    	<p class="tags"><?php the_tags('<span class="tags-title label">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>
+    	<?php //the_tags('<a href="#" class="button tiny radius" data-dropdown="tags">Merkelapper</a><ul id="tags" class="f-dropdown" data-dropdown-content><li>','</li><li>','<li></ul>'); ?>
 	</footer> <!-- end article footer -->
 						    
 		<?php // comments_template(); // uncomment if you want to use them ?>
