@@ -6087,11 +6087,12 @@ POSTS & CONTENT STYLES
     padding: 10px; }
   .entry-content code {
     font-family: "source-code-pro", "Liberation Mono", "Monaco", Courier, monospace; }
+  .entry-content textarea {
+    height: auto; }
 
 /* end .entry-content */
 .wp-caption {
   max-width: 100%;
-  background: #eee;
   padding: 5px;
   /* images inside wp-caption */ }
   .wp-caption img {
@@ -6100,8 +6101,11 @@ POSTS & CONTENT STYLES
     width: 100%; }
   .wp-caption p.wp-caption-text {
     font-size: 0.85em;
-    margin: 4px 0 7px;
-    text-align: center; }
+    margin: 0px 0 7px;
+    text-align: center;
+    border-left: 1px solid #e0eaf1;
+    border-right: 1px solid #e0eaf1;
+    border-bottom: 1px solid #e0eaf1; }
 
 /* end .wp-caption */
 /* image gallery styles */
@@ -6255,8 +6259,7 @@ COMMENT FORM STYLES
       min-width: 250px; }
     .respond-form form textarea {
       resize: none;
-      width: 97.3%;
-      height: 150px; }
+      width: 97.3%; }
 
 /* comment submit button */
 /* comment form title */

@@ -367,12 +367,14 @@ POSTS & CONTENT STYLES
 			code {
 				font-family: $code-font-family;
 			}
+			textarea {
+				height: auto;
+			}
 
 		} /* end .entry-content */
 
 		.wp-caption {
 			max-width: 100%;
-			background: #eee;
 			padding: 5px;
 
 			/* images inside wp-caption */
@@ -384,8 +386,11 @@ POSTS & CONTENT STYLES
 
 			p.wp-caption-text {
 				font-size: 0.85em;
-				margin: 4px 0 7px;
+				margin: 0px 0 7px;
 				text-align: center;
+				border-left: 1px solid #e0eaf1;
+				border-right: 1px solid #e0eaf1;
+				border-bottom: 1px solid #e0eaf1;
 			}
 
 		} /* end .wp-caption */
@@ -634,6 +639,7 @@ COMMENT FORM STYLES
 			background: #efefef;
 			border: 2px solid #cecece;
 			line-height: 1.5em;
+			
 
 			&:focus {
 				background: #fff;
@@ -661,7 +667,8 @@ COMMENT FORM STYLES
 		textarea {
 			resize: none;
 			width: 97.3%;
-			height: 150px;
+		
+			
 		}
 
 	}
