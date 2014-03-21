@@ -135,6 +135,8 @@ function joints_scripts_and_styles() {
 
     // adding bigfoot.js awesome footnotes to the footer
     wp_register_script( 'bigfoot', get_stylesheet_directory_uri() . '/library/js/vendor/bigfoot.min.js', array( 'jquery' ), '', true );
+
+    wp_register_script( 'wordcounter', get_stylesheet_directory_uri() . '/library/js/vendor/wordcounter/word-and-character-counter.min.js', array( 'jquery' ), '', true );
    
    // adding the bigfoot style
    wp_register_style( 'bigfoot', get_stylesheet_directory_uri() . '/library/css/bigfoot-default.css', array(), '', all );
@@ -159,6 +161,7 @@ function joints_scripts_and_styles() {
     wp_enqueue_script( 'typekit' );
     wp_enqueue_script( 'bigfoot' );
     wp_enqueue_script( 'spanner' );
+    wp_enqueue_script( 'wordcounter' );
     wp_enqueue_style( 'joints-stylesheet' );
     wp_enqueue_style( 'foundation-icons' );
     wp_enqueue_style( 'bigfoot' );
