@@ -88,7 +88,7 @@ The comments page for joints
 
 	<?php endif; ?>
 	
-	<p><textarea name="comment" id="comment" placeholder="<?php _e('Skriv kva du har på hjarte...', 'jointstheme'); ?>" tabindex="4"></textarea></p>
+	<p><textarea name="comment" id="comment" rows="20" placeholder="<?php _e('Skriv kva du har på hjarte...', 'jointstheme'); ?>" tabindex="4"></textarea></p>
 	
 	<p>
 	  <input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Send inn', 'jointstheme'); ?>" />

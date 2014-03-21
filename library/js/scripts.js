@@ -23,19 +23,27 @@ if (!window.getComputedStyle) {
         this.el = el;
         this.getPropertyValue = function(prop) {
             var re = /(\-([a-z]){1})/g;
-            if (prop == 'float') prop = 'styleFloat';
+            if (prop === 'float') {
+                prop = 'styleFloat';
+            }
             if (re.test(prop)) {
                 prop = prop.replace(re, function () {
                     return arguments[2].toUpperCase();
                 });
             }
             return el.currentStyle[prop] ? el.currentStyle[prop] : null;
-        }
+        };
         return this;
-    }
+    };
 }
 // Activate Bigfoot.js 
 $.bigfoot();
+
+//
+$('#comment').wordcounter({
+    limit: 400,
+    message: 'Du hadde mykje på hjartet. Kanskje dette kunne blitt eit innlegg? Send oss gjerne ein <a href="#" onclick="location.href=&quot;mailto:knut.melvar@ahkr.uib.no?subject=Forslag%20til%20UiBeta&body=&quot;+document.getElementById(&quot;comment&quot;).value;" value="Send">epost</a>.'
+});
 
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {

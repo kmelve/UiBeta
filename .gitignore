@@ -1,2 +1,6 @@
 .DS_Store
 library/scss/.sass-cache/*
+.codekit-cache
+config.codekit
+library/js/min/*
+library/js/vendor/min/*
