@@ -457,7 +457,7 @@ body {
   color: black;
   padding: 0;
   margin: 0;
-  font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+  font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -1873,7 +1873,7 @@ select {
       color: #222222;
       padding: 1rem;
       display: block;
-      font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+      font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
       font-size: 1rem; }
       .accordion dd > a:hover {
         background: #e2e2e2; }
@@ -2291,7 +2291,7 @@ select {
 
 button, .button {
   cursor: pointer;
-  font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+  font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -3438,7 +3438,7 @@ kbd {
 
 .label {
   font-weight: normal;
-  font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+  font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
   text-align: center;
   text-decoration: none;
   line-height: 1;
@@ -3815,7 +3815,7 @@ ul.pagination {
     color: #eeeeee;
     font-weight: normal;
     font-size: 1rem;
-    font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
+    font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
   .pricing-table .price {
     background-color: #f6f6f6;
     padding: 0.9375rem 1.25rem;
@@ -3823,7 +3823,7 @@ ul.pagination {
     color: #333333;
     font-weight: normal;
     font-size: 2rem;
-    font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
+    font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
   .pricing-table .description {
     background-color: white;
     padding: 0.9375rem;
@@ -3953,7 +3953,7 @@ ul.pagination {
   padding: 0.875rem 0;
   list-style-type: none;
   list-style-position: inside;
-  font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
+  font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
   .side-nav li {
     margin: 0 0 0.4375rem 0;
     font-size: 0.875rem; }
@@ -3963,7 +3963,7 @@ ul.pagination {
     .side-nav li.active > a:first-child {
       color: #4d4d4d;
       font-weight: normal;
-      font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
+      font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif; }
     .side-nav li.divider {
       border-top: 1px solid;
       height: 0;
@@ -4074,7 +4074,7 @@ ul.pagination {
     display: inline;
     margin-left: 1rem;
     margin-bottom: 0.625rem;
-    font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+    font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
     font-weight: normal;
     font-size: 0.875rem;
     color: #999999; }
@@ -4309,7 +4309,7 @@ table {
       padding-right: 2rem;
       padding-bottom: 1.0625rem;
       padding-left: 2rem;
-      font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+      font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
       font-size: 1rem; }
       .tabs dd > a:hover {
         background: #e2e2e2; }
@@ -4911,7 +4911,7 @@ meta.foundation-mq-topbar {
     color: #009de0;
     padding: 12px 0 12px 0;
     padding-left: 15px;
-    font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+    font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
     font-size: 1.0625rem;
     font-weight: normal;
     background: rgba(38, 38, 38, 0.9); }
@@ -6187,7 +6187,7 @@ COMMENT STYLES
     line-height: 1.5em; }
   .commentlist .comment-reply-link {
     cursor: pointer;
-    font-family: "myriad-pro", "Myriad Pro", Myriad, sans-serif;
+    font-family: Comic Sans MS, "myriad-pro", "Myriad Pro", Myriad, sans-serif;
     font-weight: normal;
     line-height: normal;
     margin: 0 0 1.25rem;
