@@ -14,7 +14,7 @@
 					
 							<section class="entry-content">
 								<?php echo '<img src="' . get_stylesheet_directory_uri() . '/library/images/404.jpg" alt="Foto: TOR ERIK H. MATHIESEN; Manipulert av UiBeta" border="0" />' ?>
-								<p><?php _e("Det du såg etter eksisterer ikkje. Leit !", "jointstheme"); ?></p>
+								<p><?php _e("Vi fant ikkje det du såg etter. Leit vidare!", "jointstheme"); ?></p>
 							</section> <!-- end article section -->
 
 							<section class="search">
