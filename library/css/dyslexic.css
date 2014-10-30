@@ -1,0 +1,28 @@
+/** Credit to   http://dyslexicfonts.com/plugin/easyread.css
+                https://github.com/ndarville
+*/
+@font-face {
+  font-family: "opendyslexic";
+  src: url("/font/open-dyslexic/OpenDyslexic-Regular.otf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "opendyslexic";
+  src: url("/font/open-dyslexic/OpenDyslexic-Bold.otf");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "opendyslexic";
+  src: url("/font/open-dyslexic/OpenDyslexic-Italic.otf");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "opendyslexic";
+  src: url("/font/open-dyslexic/OpenDyslexic-BoldItalic.otf");
+  font-weight: bold;
+  font-style: italic; }
+@font-face {
+  font-family: "opendyslexicmonoregular";
+  src: url("/font/open-dyslexic/OpenDyslexicMono-Regular.otf");
+  font-weight: normal;
+  font-style: normal; }

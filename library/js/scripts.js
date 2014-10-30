@@ -36,7 +36,7 @@ if (!window.getComputedStyle) {
         return this;
     };
 }
-// Activate Bigfoot.js 
+// Activate Bigfoot.js
 $.bigfoot();
 
 //
@@ -54,39 +54,63 @@ jQuery(document).ready(function($) {
     it, so be sure to research and find the one
     that works for you best.
     */
-    
+
     /* getting viewport width */
     var responsive_viewport = $(window).width();
-    
+
     /* if is below 481px */
     if (responsive_viewport < 481) {
-    
+
     } /* end smallest screen */
-    
+
     /* if is larger than 481px */
     if (responsive_viewport > 481) {
-        
+
     } /* end larger than 481px */
-    
+
     /* if is above or equal to 768px */
     if (responsive_viewport >= 768) {
-    
+
         /* load gravatars */
         $('.comment img[data-gravatar]').each(function(){
             $(this).attr('src',$(this).attr('data-gravatar'));
         });
-        
+
     }
-    
+
     /* off the bat large screen actions */
     if (responsive_viewport > 1030) {
-        
+
     }
-    
-	
+
+
 	// add all your scripts here
-	
- 
+
+	// Dysleksi
+    if ($.cookie('dyslexic') == "yes") {
+            $("body, a, label, h1, h2, h3").addClass("dyslexic");
+            $("#dysleksi").removeClass("disabled");
+        }
+
+        // When the span is clicked
+        $("#dysleksi").on('click', (function () {
+            // Check the current cookie value
+            // If the cookie is empty or set to no, then add dyslexic
+            if ($.cookie('dyslexic') == "undefined" || $.cookie('dyslexic') == "no") {
+                // Set cookie value to yes
+                $.cookie('dyslexic','yes', {expires: 365, path: '/'});
+                // Add the class to the body, a, label, h1, h2, h3
+                $("body, a, label, h1, h2, h3").addClass("dyslexic");
+                $("#dysleksi").removeClass("disabled");
+            }
+            // If the cookie was already set to yes then remove it
+            else {
+                $.cookie('dyslexic','no',  {expires: 365, path: '/'});
+                $("body, a, label, h1, h2, h3").removeClass("dyslexic");
+                $("#dysleksi").addClass("disabled");
+            }
+        }));
+
 }); /* end of as page load scripts */
 
 

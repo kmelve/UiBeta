@@ -15,6 +15,9 @@ GENERAL STYLES
 body {
 	background-color: hsl(30, 12%, 90%);
 }
+.dyslexic {
+    font-family: $dyslectic-font;
+}
 .label {
 	vertical-align: text-top;
 	border-radius: $global-radius;
@@ -24,7 +27,7 @@ body {
 	font-weight: 700;
 
 	&:visited {
-		color: $label-font-color;		
+		color: $label-font-color;
 	}
 	&:hover {
 		text-decoration: underline;
@@ -96,8 +99,8 @@ a {
 	-webkit-font-smoothing: $font-smoothing;
 	/*adds highlight on hover */
 	&:hover, &:focus {
-		background: $primary-color;
-		color: #fff;
+
+		color: $secondary-color;
 
 	}
 	a:visited {
@@ -122,12 +125,35 @@ a {
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }
+p {
+    a {
+        background-image: linear-gradient(to top,
+            rgba(0,0,0,0) 11%,
+            rgba(0, 139, 199, 0.8) 11%,
+            rgba(0, 139, 199, 0.8) 16%,
+            rgba(0,0,0,0) 16%
+        );
+            &:hover, &:focus {
+                background-image: linear-gradient(to top,
+                        rgba(0,0,0,0) 11%,
+                        rgba(217,89,0, 0.8) 11%,
+                        rgba(217,89,0, 0.8) 16%,
+                        rgba(0,0,0,0) 16%
+                );
+            }
+    }
+    a {
+        &.label, &.button {
+            background-image: none;
+        }
+    }
+}
 
 /******************************************************************
 H1, H2, H3, H4, H5 P STYLES
 ******************************************************************/
 p {
-	
+
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
@@ -186,6 +212,7 @@ HEADER STYLES
 }
 
 #logo {
+    font-family: $body-font-family;
     margin: 0;
     line-height: $h1-font-size;
     text-align: center;
@@ -193,7 +220,7 @@ HEADER STYLES
     font-weight: bold;
     transition: all 500ms ease-in-out;
         	a {
-    		
+
     		.char1, .char2, .char4, .char5, .char6 {
     			transition: color 200ms ease-out;
     		}
@@ -206,7 +233,7 @@ HEADER STYLES
     		.char3, .char4, .char5, .char6 {
     			color: $secondary-color;
     		}
-    	
+
     	&:hover {
     		background: none;
     		.char1, .char2, .char3 {
@@ -217,7 +244,7 @@ HEADER STYLES
 	   			color: $primary-color;
 	   		}
     	}
-    	
+
     }
 
     }
@@ -242,13 +269,13 @@ and more scalable.
 		z-index: 1;
 	}
 	.current_page_item {
-		
+
 		a {
 			color: $topbar-link-color-active;
-			
+
 		}
 	}
-} 
+}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -256,7 +283,7 @@ POSTS & CONTENT STYLES
 
 #content {
 	background-color: #fff;
-	
+
 	article {
 		margin-top: 2.2em;
 
@@ -373,7 +400,7 @@ POSTS & CONTENT STYLES
 			code {
 				font-family: $code-font-family;
 			}
-			
+
 
 		} /* end .entry-content */
 
@@ -606,7 +633,7 @@ COMMENT STYLES
 
 		&:hover,
 		&:focus {
-		
+
 		}
 
 	} /* end .commentlist .comment-reply-link */
@@ -644,7 +671,7 @@ COMMENT FORM STYLES
 			border: 2px solid #cecece;
 			line-height: 1.5em;
 			height: auto;
-			
+
 
 			&:focus {
 				background: #fff;
@@ -673,8 +700,8 @@ COMMENT FORM STYLES
 			resize: none;
 			width: 97.3%;
 			height: auto;
-		
-			
+
+
 		}
 
 	}
@@ -718,7 +745,7 @@ SIDEBARS & ASIDES
 	}
 
 	.widgettitle {
-		color: #000; 
+		color: #000;
   		text-align: center;
   		border-bottom: 1px solid rgba(0,0,0,0.5);
 	}
@@ -727,7 +754,7 @@ SIDEBARS & ASIDES
 		background: rgba(255,255,255,0.5);
 		border-radius: 3px;
 		ul {
-			
+
 
 			li {
 				list-style: none;
@@ -774,7 +801,7 @@ FOOTER STYLES
 		ul {
 
 			li {
-				
+
 
 			}
 

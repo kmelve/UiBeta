@@ -51,7 +51,7 @@ function joints_start() {
 
 /*********************
 WP_HEAD GOODNESS
-The default wordpress head is a mess. 
+The default wordpress head is a mess.
 Let's clean it up by removing all the junk we don't need.
 *********************/
 
@@ -123,10 +123,10 @@ function joints_scripts_and_styles() {
 
     // modernizr (without media query polyfill)
     wp_register_script( 'joints-modernizr', get_stylesheet_directory_uri() . '/library/js/vendor/custom.modernizr.js', array(), '2.5.3', false );
-    
+
     // adding Foundation scripts file in the footer
     wp_register_script( 'foundation-js', get_template_directory_uri() . '/library/js/foundation.min.js', array( 'jquery' ), '', true );
- 
+
         // adding typekit to the header
     wp_register_script( 'typekit', '//use.typekit.net/nfo6uyf.js', array(), false );
 
@@ -137,13 +137,17 @@ function joints_scripts_and_styles() {
     wp_register_script( 'bigfoot', get_stylesheet_directory_uri() . '/library/js/vendor/bigfoot.min.js', array( 'jquery' ), '', true );
 
     wp_register_script( 'wordcounter', get_stylesheet_directory_uri() . '/library/js/vendor/wordcounter.js', array( 'jquery' ), '', true );
-   
+
+
+    // jquery cookie plugin
+    wp_register_script( 'cookie', get_stylesheet_directory_uri() . '/library/js/vendor/jquery.cookie.js', array( 'jquery' ), '', true );
+
    // adding the bigfoot style
    wp_register_style( 'bigfoot', get_stylesheet_directory_uri() . '/library/css/bigfoot-default.css', array(), '', all );
 
    // register main stylesheet
     wp_register_style( 'joints-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
-    
+
     // register foundation icons
     wp_register_style( 'foundation-icons', get_stylesheet_directory_uri() . '/library/css/icons/foundation-icons.css', array(), '', 'all' );
 
@@ -161,6 +165,7 @@ function joints_scripts_and_styles() {
     wp_enqueue_script( 'typekit' );
     wp_enqueue_script( 'bigfoot' );
     wp_enqueue_script( 'spanner' );
+    wp_enqueue_script( 'cookie' );
     wp_enqueue_script( 'wordcounter' );
     wp_enqueue_style( 'joints-stylesheet' );
     wp_enqueue_style( 'foundation-icons' );
@@ -178,7 +183,7 @@ function joints_scripts_and_styles() {
   }
 }
 
-    
+
 //Replace jQuery with Google CDN jQuery
 if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
@@ -200,7 +205,7 @@ function joints_theme_support() {
 	// default thumb size
 	set_post_thumbnail_size(125, 125, true);
 
-	// rss 
+	// rss
 	add_theme_support('automatic-feed-links');
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
@@ -321,17 +326,17 @@ ADD FOUNDATION FEATURES TO WORDPRESS
 function nav_menu_item_parent_classing( $classes, $item )
 {
     global $wpdb;
-    
+
 $has_children = $wpdb -> get_var( "SELECT COUNT(meta_id) FROM {$wpdb->prefix}postmeta WHERE meta_key='_menu_item_menu_item_parent' AND meta_value='" . $item->ID . "'" );
-    
+
     if ( $has_children > 0 )
     {
         array_push( $classes, "has-dropdown" );
     }
-    
+
     return $classes;
 }
- 
+
 add_filter( "nav_menu_css_class", "nav_menu_item_parent_classing", 10, 2 );
 
 //Deletes empty classes and changes the sub menu class name
